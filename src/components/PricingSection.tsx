@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-// ✅ Added icons for the tabs
-import { FaMale, FaFemale, FaHome } from 'react-icons/fa';
 
 // Data for the pricing tables based on the images
 const gentsPricing = [
@@ -76,7 +74,7 @@ export default function PricingSection() {
   const numericHeaderStyle = { ...tableHeaderStyle, textAlign: 'right' as const };
 
 
-  const TabButton = ({ tabName, label }: { tabName: string, label: React.ReactNode }) => (
+  const TabButton = ({ tabName, label }: { tabName: string, label: string }) => (
     <button 
       onClick={() => setActiveTab(tabName)}
       style={{
@@ -103,17 +101,17 @@ export default function PricingSection() {
           <h2 style={{ fontSize: '2.8rem', fontWeight: 'bold', color: '#1e293b', marginBottom: '1rem' }}>
             Transparent Pricing for the Best Laundry Services
           </h2>
+          {/* ✅ FIX: Replaced ' with &apos; to fix the build error */}
           <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '800px', margin: '0 auto' }}>
-            At MM Laundry, we offer competitive pricing for our expert laundry service, dry cleaning, steam ironing, and household cleaning. Whether it's everyday wear, delicate fabrics, or bulky household items, we provide top-notch care at affordable rates.
+            At MM Laundry, we offer competitive pricing for our expert laundry service, dry cleaning, steam ironing, and household cleaning. Whether it&apos;s everyday wear, delicate fabrics, or bulky household items, we provide top-notch care at affordable rates.
           </p>
         </div>
 
         {/* Tab Buttons */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '0.5rem', maxWidth: 'fit-content', margin: '0 auto' }}>
-          {/* ✅ FIX: Wrapped icon and text in a fragment <>...</> to pass as a single element */}
-          <TabButton tabName="gents" label={<><FaMale /> For Gentleman</>} />
-          <TabButton tabName="ladies" label={<><FaFemale /> For Ladies</>} />
-          <TabButton tabName="household" label={<><FaHome /> Household Items</>} />
+          <TabButton tabName="gents" label="For Gentleman" />
+          <TabButton tabName="ladies" label="For Ladies" />
+          <TabButton tabName="household" label="Household Items" />
         </div>
         
         <p style={{ 
