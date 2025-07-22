@@ -5,7 +5,9 @@ export default function FAQSection() {
       <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'left' }}>
         <div style={{ marginBottom: 24 }}>
           <strong>How do I schedule a pickup?</strong>
-          <p>Simply click the "Book a Pickup" button and fill out the contact form. We'll get in touch to confirm your pickup time.</p>
+          <p>
+            Simply click the &quot;Book a Pickup&quot; button and fill out the contact form. We&apos;ll get in touch to confirm your pickup time.
+          </p>
         </div>
         <div style={{ marginBottom: 24 }}>
           <strong>What areas do you serve?</strong>
@@ -18,4 +20,4 @@ export default function FAQSection() {
       </div>
     </section>
   );
-} 
+}
